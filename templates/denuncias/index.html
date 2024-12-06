@@ -1,0 +1,16 @@
+{% extends "denuncias/base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4">Bem-vindo ao Sistema de Denúncias</h1>
+    <p class="lead mt-3">
+        Proteja a integridade das informações da sua empresa. Aqui você pode denunciar de forma segura incidentes relacionados a vazamento de dados e práticas inadequadas.
+    </p>
+    <div class="mt-5">
+        <a href="{% url 'lista_denuncias' %}" class="btn btn-primary btn-lg me-2">Ver Denúncias</a>
+        <a href="{% url 'nova_denuncia' %}" class="btn btn-success btn-lg">Fazer uma Denúncia</a>
+    </div>
+</div>
+{% endblock %}

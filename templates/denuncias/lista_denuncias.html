@@ -1,0 +1,31 @@
+{% extends "denuncias/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Minhas Denúncias</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for denuncia in denuncias %}
+            <tr>
+                <td>{{ denuncia.titulo }}</td>
+                <td>{{ denuncia.descricao }}</td>
+                <td>{{ denuncia.data|date:"d/m/Y H:i" }}</td>
+                <td>{{ denuncia.status }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">Nenhuma denúncia encontrada.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

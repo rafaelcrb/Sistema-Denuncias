@@ -1,0 +1,11 @@
+{% extends "denuncias/base.html" %}
+
+{% block content %}
+<h2>Cadastrar Nova Denúncia</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+</form>
+<a href="{% url 'lista_denuncias' %}" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}
